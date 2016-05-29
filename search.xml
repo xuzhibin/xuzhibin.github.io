@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Hexo安装记]]></title>
-      <url>http://yoursite.com/2016/05/30/hexo-install/</url>
+      <url>http://xuzhibin.com/2016/05/30/hexo-install/</url>
       <content type="html"><![CDATA[<h1 id="Hexo是啥"><a href="#Hexo是啥" class="headerlink" title="Hexo是啥"></a>Hexo是啥</h1><p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a> 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。</p>
 <h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>首先翻看一遍 <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 官方文档</a></p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>安装 Node.js &amp; Git<br>该命令执行后，自动装好node和npm。</p>
@@ -101,7 +101,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/05/29/hello-world/</url>
+      <url>http://xuzhibin.com/2016/05/29/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -116,7 +116,7 @@
     
     <entry>
       <title><![CDATA[npm小结]]></title>
-      <url>http://yoursite.com/2016/05/29/npm-summary/</url>
+      <url>http://xuzhibin.com/2016/05/29/npm-summary/</url>
       <content type="html"><![CDATA[<p>随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。</p>
 <h1 id="NPM是什么"><a href="#NPM是什么" class="headerlink" title="NPM是什么"></a>NPM是什么</h1><p>NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看、搜索、发布等。<br>npm的背后，是基于couchdb的一个数据库，详细记录了每个包的信息，包括作者、版本、依赖、授权信息等。它的一个很重要的作用就是：将开发者从繁琐的包管理工作（版本、依赖等）中解放出来，更加专注于功能的开发。</p>
 <p>npm官网：<a href="https://npmjs.org/" target="_blank" rel="external">https://npmjs.org/</a></p>

@@ -2,13 +2,13 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://yoursite.com/post-sitemap.xml</loc>
+        <loc>http://xuzhibin.com/post-sitemap.xml</loc>
         <lastmod>2016-05-29T21:06:59.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite.com/page-sitemap.xml</loc>
-        <lastmod>2016-05-29T17:34:16.000Z</lastmod>
+        <loc>http://xuzhibin.com/page-sitemap.xml</loc>
+        <lastmod>2016-05-29T21:34:44.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>
