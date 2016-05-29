@@ -3,12 +3,22 @@
 
     <sitemap>
         <loc>http://xuzhibin.com/post-sitemap.xml</loc>
-        <lastmod>2016-05-29T21:06:59.000Z</lastmod>
+        <lastmod>2016-05-29T23:05:53.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://xuzhibin.com/page-sitemap.xml</loc>
-        <lastmod>2016-05-29T21:34:44.000Z</lastmod>
+        <lastmod>2016-05-29T23:08:42.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://xuzhibin.com/category-sitemap.xml</loc>
+        <lastmod>2016-05-29T23:05:53.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://xuzhibin.com/tag-sitemap.xml</loc>
+        <lastmod>2016-05-29T23:05:24.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>
