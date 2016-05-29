@@ -1,0 +1,816 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。
+NPM是什么NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm小结">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/npm-summary/index.html">
+<meta property="og:site_name" content="狂人居">
+<meta property="og:description" content="随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。
+NPM是什么NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看">
+<meta property="og:updated_time" content="2016-05-29T18:31:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm小结">
+<meta name="twitter:description" content="随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。
+NPM是什么NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> npm小结 | 狂人居 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">狂人居</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                npm小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-29T02:11:32+08:00" content="2016-05-29">
+              2016-05-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。</p>
+<h1 id="NPM是什么"><a href="#NPM是什么" class="headerlink" title="NPM是什么"></a>NPM是什么</h1><p>NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看、搜索、发布等。<br>npm的背后，是基于couchdb的一个数据库，详细记录了每个包的信息，包括作者、版本、依赖、授权信息等。它的一个很重要的作用就是：将开发者从繁琐的包管理工作（版本、依赖等）中解放出来，更加专注于功能的开发。</p>
+<p>npm官网：<a href="https://npmjs.org/" target="_blank" rel="external">https://npmjs.org/</a></p>
+<p>npm官方文档：<a href="https://npmjs.org/doc/README.html" target="_blank" rel="external">https://npmjs.org/doc/README.html</a></p>
+<h1 id="我们需要了解什么"><a href="#我们需要了解什么" class="headerlink" title="我们需要了解什么"></a>我们需要了解什么</h1><ol>
+<li>npm的安装、卸载、升级、配置</li>
+<li>npm的使用：package的安装、卸载、升级、查看、搜索、发布</li>
+<li>npm包的安装模式：本地 vs 全局</li>
+<li>package.json：包描述信息</li>
+<li>package版本：常见版本声明形式</li>
+</ol>
+<h1 id="npm的安装-Mac"><a href="#npm的安装-Mac" class="headerlink" title="npm的安装 Mac"></a>npm的安装 Mac</h1><p>该命令执行后，自动装好node和npm。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h2 id="npm包安装模式"><a href="#npm包安装模式" class="headerlink" title="npm包安装模式"></a>npm包安装模式</h2><p>在具体介绍npm包的管理之前，我们首先得来了解一下npm包的两种安装模式。</p>
+<h2 id="本地安装-vs-全局安装（重要）"><a href="#本地安装-vs-全局安装（重要）" class="headerlink" title="本地安装 vs 全局安装（重要）"></a>本地安装 vs 全局安装（重要）</h2><p>node包的安装分两种：本地安装、全局安装。两者的区别如下，后面会通过简单例子说明<br>本地安装：package会被下载到当前所在目录，也只能在当前目录下使用。<br>全局安装：package会被下载到到特定的系统目录下，安装的package能够在所有目录下使用。</p>
+<h2 id="npm-install-pkg-–-本地安装"><a href="#npm-install-pkg-–-本地安装" class="headerlink" title="npm install pkg – 本地安装"></a>npm install pkg – 本地安装</h2><p>运行如下命令，就会在当前目录下安装grunt-cli（grunt命令行工具）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install grunt-cli</span><br></pre></td></tr></table></figure>
+<p>安装结束后，当前目录下回多出一个node_modules目录，grunt-cli就安装在里面。同时注意控制台输出的信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grunt-cli@0.1.9 node_modules/grunt-cli</span><br><span class="line">├── resolve@0.3.1</span><br><span class="line">├── nopt@1.0.10 (abbrev@1.0.4)</span><br><span class="line">└── findup-sync@0.1.2 (lodash@1.0.1, glob@3.1.21)</span><br></pre></td></tr></table></figure>
+<p>简单说明一下：</p>
+<ol>
+<li>grunt-cli@0.1.9：当前安装的package为grunt-cli，版本为0.19</li>
+<li>node_modules/grunt-cli：安装目录</li>
+<li>resolve@0.3.1：依赖的包有resolve、nopt、findup-sync，它们各自的版本、依赖在后面的括号里列出来</li>
+</ol>
+<h2 id="npm-install-g-pkg-全局安装"><a href="#npm-install-g-pkg-全局安装" class="headerlink" title="npm install -g pkg- 全局安装"></a>npm install -g pkg- 全局安装</h2><p>上面已经安装了grunt-cli，然后你跑到其他目录下面运行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt</span><br></pre></td></tr></table></figure>
+<p>果断提示你grunt命令不存在，为什么呢？因为上面只是进行了本地安装，grunt命令只能在对应安装目录下使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-bash: grunt: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
+<p>如果为了使用grunt命令，每到一个目录下都得重新安装一次，那不抓狂才怪。肿么办呢？<br>很简单，采用全局安装就行了，很简单，加上参数-g就可以了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+<p>于是，在所有目录下都可以无压力使用grunt命令了。这个时候，你会注意到控制台输入的信息有点不同。主要的区别在于安装目录，现在变成了/usr/local/lib/node_modules/grunt-cli，/usr/local/lib/node_modules/也就是之前所说的全局安装目录啦。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grunt-cli@0.1.9 /usr/<span class="built_in">local</span>/lib/node_modules/grunt-cli</span><br><span class="line">├── resolve@0.3.1</span><br><span class="line">├── nopt@1.0.10 (abbrev@1.0.4)</span><br><span class="line">└── findup-sync@0.1.2 (lodash@1.0.1, glob@3.1.21)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="npm包管理"><a href="#npm包管理" class="headerlink" title="npm包管理"></a>npm包管理</h1><p>npm的包管理命令是使用频率最高的，所以也是我们需要牢牢记住并熟练使用的。其实无非也就是几个动作：安装、卸载、更新、查看、搜索、发布等。</p>
+<p><strong>安装最新版本的grunt-cli</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install grunt-cli</span><br></pre></td></tr></table></figure>
+<p><strong>安装0.1.9版本的grunt-cli</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install grunt-cli@<span class="string">"0.1.9"</span></span><br></pre></td></tr></table></figure>
+<p><strong>通过package.json进行安装</strong></p>
+<p>如果我们的项目依赖了很多package，一个一个地安装那将是个体力活。我们可以将项目依赖的包都在package.json这个文件里声明，然后一行命令搞定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nam install</span><br></pre></td></tr></table></figure>
+<p><strong>其他package安装命令</strong><br>运行如下命令，列出所有npm install可能的参数形式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --help</span><br></pre></td></tr></table></figure>
+<p>输出如下，有兴趣的童鞋可以了解下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;tarball file&gt;</span><br><span class="line">npm install &lt;tarball url&gt;</span><br><span class="line">npm install &lt;folder&gt;</span><br><span class="line">npm install &lt;pkg&gt;</span><br><span class="line">npm install &lt;pkg&gt;@&lt;tag&gt;</span><br><span class="line">npm install &lt;pkg&gt;@&lt;version&gt;</span><br><span class="line">npm install &lt;pkg&gt;@&lt;version range&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>卸载grunt-cli</strong><br>比如卸载grunt-cli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall grunt-cli</span><br></pre></td></tr></table></figure>
+<p>卸载0.1.9版本的grunt-cli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall grunt-cli@<span class="string">"0.1.9"</span></span><br></pre></td></tr></table></figure>
+<p><strong>npm ls：查看安装了哪些包</strong></p>
+<p>运行如下命令，就可以查看当前目录安装了哪些package</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ls</span><br></pre></td></tr></table></figure>
+<p>输出如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/private/tmp/npm</span><br><span class="line">└─┬ grunt-cli@0.1.9</span><br><span class="line">  ├─┬ findup-sync@0.1.2</span><br><span class="line">  │ ├─┬ glob@3.1.21</span><br><span class="line">  │ │ ├── graceful-fs@1.2.3</span><br><span class="line">  │ │ ├── inherits@1.0.0</span><br><span class="line">  │ │ └─┬ minimatch@0.2.12</span><br><span class="line">  │ │   ├── lru-cache@2.3.0</span><br><span class="line">  │ │   └── sigmund@1.0.0</span><br><span class="line">  │ └── lodash@1.0.1</span><br><span class="line">  ├─┬ nopt@1.0.10</span><br><span class="line">  │ └── abbrev@1.0.4</span><br><span class="line">  └── resolve@0.3.1</span><br></pre></td></tr></table></figure>
+<p>输出如下，同样，如果是要查看package的全局安装信息，加上-g就可以</p>
+<p><strong>npm ls pkg：查看特定package的信息</strong><br>运行如下命令，输出grunt-cli的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ls grunt-cli</span><br></pre></td></tr></table></figure>
+<p>输出的信息比较有限，只有安装目录、版本，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/private/tmp/npm</span><br><span class="line">└── grunt-cli@0.1.9</span><br></pre></td></tr></table></figure>
+<p>如果要查看更详细信息，可以通过npm info pkg，输出的信息非常详尽，包括作者、版本、依赖等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm info grunt-cli</span><br></pre></td></tr></table></figure>
+<p><strong>npm update pkg：package更新</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update grunt-cli</span><br></pre></td></tr></table></figure>
+<p><strong>npm search pgk：搜索</strong><br>输入如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm search grunt-cli</span><br></pre></td></tr></table></figure>
+<p>返回结果如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm http GET http://registry.npmjs.org/-/all/since?stale=update_after&amp;startkey=1375519407838</span><br><span class="line">npm http 200 http://registry.npmjs.org/-/all/since?stale=update_after&amp;startkey=1375519407838</span><br><span class="line">NAME                  DESCRIPTION                                        AUTHOR            DATE              KEYWORDS</span><br><span class="line">grunt-cli             The grunt <span class="built_in">command</span> line interface.                  =cowboy =tkellen  2013-07-27 02:24</span><br><span class="line">grunt-cli-dev-exitprocess The grunt <span class="built_in">command</span> line interface.              =dnevnik          2013-03-11 16:19</span><br><span class="line">grunt-client-compiler Grunt wrapper <span class="keyword">for</span> client-compiler.                 =rubenv           2013-03-26 09:15  gruntplugin</span><br><span class="line">grunt-clientside      Generate clientside js code from CommonJS modules  =jga              2012-11-07 01:20  gruntplugin</span><br></pre></td></tr></table></figure>
+<h1 id="npm发布"><a href="#npm发布" class="headerlink" title="npm发布"></a>npm发布</h1><p>这个命令我自己也还没实际用过，不误导大家，语法如下，也可参考官方对于package发布的说明 <a href="https://npmjs.org/doc/developers.html：" target="_blank" rel="external">https://npmjs.org/doc/developers.html：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm publish &lt;tarball&gt;</span><br><span class="line">npm publish &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="NPM配置"><a href="#NPM配置" class="headerlink" title="NPM配置"></a>NPM配置</h1><p>npm的配置工作主要是通过npm config命令，主要包含增、删、改、查几个步骤，下面就以最为常用的proxy配置为例。</p>
+<h2 id="设置proxy"><a href="#设置proxy" class="headerlink" title="设置proxy"></a>设置proxy</h2><p>内网使用npm很头痛的一个问题就是代理，假设我们的代理是 <a href="http://proxy.example.com:8080，那么命令如下：" target="_blank" rel="external">http://proxy.example.com:8080，那么命令如下：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> proxy http://proxy.example.com:8080</span><br></pre></td></tr></table></figure>
+<p>由于npm config set命令比较常用，于是可以如下简写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="built_in">set</span> proxy http://proxy.example.com:8080</span><br></pre></td></tr></table></figure>
+<h2 id="查看proxy"><a href="#查看proxy" class="headerlink" title="查看proxy"></a>查看proxy</h2><p>设置完，我们查看下当前代理设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get proxy</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://proxy.example.com:8080/</span><br></pre></td></tr></table></figure>
+<p>同样可如下简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get proxy</span><br></pre></td></tr></table></figure>
+<h2 id="删除proxy"><a href="#删除proxy" class="headerlink" title="删除proxy"></a>删除proxy</h2><p>代理不需要用到了，那删了吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm delete proxy</span><br></pre></td></tr></table></figure>
+<h2 id="查看所有配置"><a href="#查看所有配置" class="headerlink" title="查看所有配置"></a>查看所有配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config list</span><br></pre></td></tr></table></figure>
+<h2 id="直接修改配置文件"><a href="#直接修改配置文件" class="headerlink" title="直接修改配置文件"></a>直接修改配置文件</h2><p>有时候觉得一条配置一条配置地修改有些麻烦，就直接进配置文件修改了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config edit</span><br></pre></td></tr></table></figure>
+<h1 id="关于package-json"><a href="#关于package-json" class="headerlink" title="关于package.json"></a>关于package.json</h1><p>这货在官网似乎没有详细的描述，其实就是包的描述信息啦。假设当我们下载了node应用，这个node应用依赖于A、B、C三个包，如果没有package.json，我们需要人肉安装这个三个包（如果对版本有特定要求就更悲剧了）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install A</span><br><span class="line">npm install B</span><br><span class="line">npm install C</span><br></pre></td></tr></table></figure>
+<p>有了package.json，一行命令安装所有依赖。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="package-json的生成"><a href="#package-json的生成" class="headerlink" title="package.json的生成"></a>package.json的生成</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<h2 id="package-json字段简介"><a href="#package-json字段简介" class="headerlink" title="package.json字段简介"></a>package.json字段简介</h2><p>字段相当多，但最重要的的是下面几个</p>
+<blockquote>
+<p>name: package的名字（由于他会成为url的一部分，所以 non-url-safe 的字母不会通过，也不允许出现”.”、”_”），最好先在<a href="http://registry.npmjs.org/上搜下你取的名字是否已经存在" target="_blank" rel="external">http://registry.npmjs.org/上搜下你取的名字是否已经存在</a></p>
+<p>version: package的版本，当package发生变化时，version也应该跟着一起变化，同时，你声明的版本需要通过semver的校验（semver可自行谷歌）<br>dependencies: package的应用依赖模块，即别人要使用这个package，至少需要安装哪些东东。应用依赖模块会安装到当前模块的node_modules目录下。</p>
+<p>devDependencies：package的开发依赖模块，即别人要在这个package上进行开发</p>
+<p>其他：参见官网</p>
+</blockquote>
+<h2 id="package版本"><a href="#package版本" class="headerlink" title="package版本"></a>package版本</h2><p>在package.json里，你经常会在包名后看到类似”~0.1.0″这样的字符串，这就是包的版本啦。下面会列举最常见的版本声明形式，以及版本书写的要求：<br>常见版本声明形式<br>a、”~1.2.3″ 是神马意思呢，看下面领悟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;~1.2.3&quot; = &quot;&gt;=1.2.3 &amp;lt;1.3.0&quot;</span><br><span class="line">&quot;~1.2&quot; = &quot;&gt;=1.2.0 &amp;lt;1.3.0&quot;</span><br><span class="line">&quot;~1&quot; = &quot;&gt;=1.0.0 &amp;lt;1.1.0&quot;</span><br></pre></td></tr></table></figure>
+<p>b、”1.x.x”是什么意思呢，继续自行领悟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;1.2.x&quot; = &quot;&gt;=1.2.0 &amp;lt;1.3.0&quot;</span><br><span class="line">&quot;1.x.x&quot; = &quot;&gt;=1.0.0 &amp;lt;2.0.0&quot;</span><br><span class="line">&quot;1.2&quot; = &quot;1.2.x&quot;</span><br><span class="line">&quot;1.x&quot; = &quot;1.x.x&quot;</span><br><span class="line">&quot;1&quot; = &quot;1.x.x&quot;</span><br></pre></td></tr></table></figure>
+<p>版本书写要求</p>
+<ol>
+<li>版本可以v开头，比如 v1.0.1（v只是可选）</li>
+<li>1.0.1-7，这里的7是所谓的“构建版本号”，不理是神马，反正版本大于1.0.1</li>
+<li>1.0.1beta，或者1.0.1-beta，如果1.0.1后面不是 “连字符加数字” 这种形式，那么它是pre release 版本，即版本小于 1.0.1</li>
+<li>根据b、c，有：0.1.2-7 &gt; 0.1.2-7-beta &gt; 0.1.2-6 &gt; 0.1.2 &gt; 0.1.2beta</li>
+</ol>
+<h1 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h1><p>内容只是简单地把最常见的命令，以及一些需要了解的内容列了出来。如要进一步了解，可参考官网说明。此外，npm help是我们最好的朋友，如果忘了有哪些命令，命令下有哪些参数，可通过help进行查看。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/29/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="madman" />
+          <p class="site-author-name" itemprop="name">madman</p>
+          <p class="site-description motion-element" itemprop="description">路漫漫其修远兮,吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NPM是什么"><span class="nav-number">1.</span> <span class="nav-text">NPM是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我们需要了解什么"><span class="nav-number">2.</span> <span class="nav-text">我们需要了解什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm的安装-Mac"><span class="nav-number">3.</span> <span class="nav-text">npm的安装 Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm包安装模式"><span class="nav-number">3.1.</span> <span class="nav-text">npm包安装模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地安装-vs-全局安装（重要）"><span class="nav-number">3.2.</span> <span class="nav-text">本地安装 vs 全局安装（重要）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install-pkg-–-本地安装"><span class="nav-number">3.3.</span> <span class="nav-text">npm install pkg – 本地安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install-g-pkg-全局安装"><span class="nav-number">3.4.</span> <span class="nav-text">npm install -g pkg- 全局安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm包管理"><span class="nav-number">4.</span> <span class="nav-text">npm包管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm发布"><span class="nav-number">5.</span> <span class="nav-text">npm发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NPM配置"><span class="nav-number">6.</span> <span class="nav-text">NPM配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置proxy"><span class="nav-number">6.1.</span> <span class="nav-text">设置proxy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看proxy"><span class="nav-number">6.2.</span> <span class="nav-text">查看proxy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除proxy"><span class="nav-number">6.3.</span> <span class="nav-text">删除proxy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看所有配置"><span class="nav-number">6.4.</span> <span class="nav-text">查看所有配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接修改配置文件"><span class="nav-number">6.5.</span> <span class="nav-text">直接修改配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于package-json"><span class="nav-number">7.</span> <span class="nav-text">关于package.json</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json的生成"><span class="nav-number">7.1.</span> <span class="nav-text">package.json的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json字段简介"><span class="nav-number">7.2.</span> <span class="nav-text">package.json字段简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package版本"><span class="nav-number">7.3.</span> <span class="nav-text">package版本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在后面"><span class="nav-number">8.</span> <span class="nav-text">写在后面</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">madman</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>

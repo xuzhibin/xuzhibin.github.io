@@ -266,7 +266,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/30/Hexo安装记/" itemprop="url">
+                <a class="post-title-link" href="/2016/05/30/hexo-install/" itemprop="url">
                   Hexo安装记
                 </a>
               
@@ -309,95 +309,29 @@
 
       
         
-          
-            <h1 id="Hexo是啥"><a href="#Hexo是啥" class="headerlink" title="Hexo是啥"></a>Hexo是啥</h1><p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a> 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。</p>
-<h1 id="一-安装-Hexo"><a href="#一-安装-Hexo" class="headerlink" title="一. 安装 Hexo"></a>一. 安装 Hexo</h1><p>首先翻看一遍 <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 官方文档</a></p>
-<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><p>安装 Node.js &amp; Git<br>该命令执行后，自动装好node和npm。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<p>配置 Git<br>按照Github提示，创建SSH秘钥：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/.ssh #创建ssh命令</span><br><span class="line"></span><br><span class="line">$ cd ~/.ssh</span><br><span class="line"></span><br><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot; #注意更改Email地址</span><br><span class="line"></span><br><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+          <h1 id="Hexo是啥"><a href="#Hexo是啥" class="headerlink" title="Hexo是啥"></a>Hexo是啥</h1><p><a href="https://hexo.io">Hexo</a> 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。</p>
+<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>首先翻看一遍 <a href="https://hexo.io/zh-cn/">Hexo 官方文档</a></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>安装 Node.js &amp; Git<br>该命令执行后，自动装好node和npm。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h2 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h2><p>按照Github提示，创建SSH秘钥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/.ssh <span class="comment">#创建ssh命令</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line"></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span> <span class="comment">#注意更改Email地址</span></span><br><span class="line"></span><br><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>此时，pdcopy命令已经将id_rsa.pub内容复制到剪切板。</p>
-<p>登录 github：<a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a> 点击Add an SSH Key，Title 部分填写一个所用电脑的名称，然后在Key部分填写之前通过pdcopy命令复制的内容。生成 key <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;yourusername</span><br><span class="line">$ git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="2-安装-Hexo"><a href="#2-安装-Hexo" class="headerlink" title="2.安装 Hexo"></a>2.安装 Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>登录 github：<a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a> 点击Add an SSH Key，Title 部分填写一个所用电脑的名称，然后在Key部分填写之前通过pdcopy命令复制的内容。生成 key <a href="https://help.github.com/articles/generating-ssh-keys/">https://help.github.com/articles/generating-ssh-keys/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"yourusername</span><br><span class="line">$ git config --global user.email "</span>youremail<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果是下面的反馈：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>不要紧张，输入yes就好，然后会看到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi cnfeat! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>好了，这个时候如果报错，记得加 sudo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h1 id="二-配置-Hexo"><a href="#二-配置-Hexo" class="headerlink" title="二. 配置 Hexo"></a>二. 配置 Hexo</h1><p>进入想要存放博客的文件夹，初始化设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>初始化成功后，文件夹里会有这些东西：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml        #配置文件</span><br><span class="line">├── package.json    #应用程序数据</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source            #网站内容</span><br><span class="line">|   ├── _drafts        #草稿</span><br><span class="line">|   └── _posts        #文章</span><br><span class="line">└── themes            #主题</span><br></pre></td></tr></table></figure>
-<p>配置文件的详细说明请查看官方文档。</p>
-<h1 id="三-本地访问博客"><a href="#三-本地访问博客" class="headerlink" title="三. 本地访问博客"></a>三. 本地访问博客</h1><p>生成静态文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>启动本地服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>这时提示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>然后在浏览器打开 <a href="http://0.0.0.0:4000/，就可以看到迁移好的博客啦！" target="_blank" rel="external">http://0.0.0.0:4000/，就可以看到迁移好的博客啦！</a></p>
-<h1 id="四-挑选主题"><a href="#四-挑选主题" class="headerlink" title="四. 挑选主题"></a>四. 挑选主题</h1><p>可参考 有那些好看的 Hexo 主题？</p>
-<p>下载主题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/xxxx themes/xxx</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>启用主题：克隆/下载 完成后，打开 站点配置文件 “_config.yml”，找到 theme 字段，并将其值更改为下载的主题名字。</p>
-<p>剩下的就根据主题使用文档，按照自己的喜好修改了。</p>
-<p>我选的 <a href="http://theme-next.iissnan.com" target="_blank" rel="external">NEXT主题</a> 胜在 <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">说明文档</a> 超详细的~</p>
-<h1 id="五-安装插件"><a href="#五-安装插件" class="headerlink" title="五. 安装插件"></a>五. 安装插件</h1><p><strong>站内搜索</strong><br>hexo-generator-search插件为 Hexo3 提供搜索功能。</p>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
-<p><strong>Feed</strong><br>hexo-generator-feed 可以生成Atom 1.0 或 RSS 2.0 feed。</p>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-<p><strong>Sitemap</strong><br>说明</p>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure>
-<h1 id="六-配置-Github-并上传"><a href="#六-配置-Github-并上传" class="headerlink" title="六. 配置 Github 并上传"></a>六. 配置 Github 并上传</h1><p>新建跟用户名同名的 repository，以“.github.io” 为后缀</p>
-<p>创建成功后，点击界面右侧的Settings，打开页面后找到GitHub Pages，点击Launch automatic page generator，生成 page。</p>
-<p>然后在网站配置文件 _config.yml文件中，找到Deployment，修改配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>如果使用 git 方式部署，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>命令来安装插件。</p>
-<p>安装成功后，在当前目录进行 deploy 操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>上传成功后，访问 yourname.github.io ，测试是否可以正常访问。</p>
-<h1 id="七-绑定域名"><a href="#七-绑定域名" class="headerlink" title="七. 绑定域名"></a>七. 绑定域名</h1><p>在 Github 里生成 CNAME 文件<br>为了绑定域名，首先在 Hexo 的 “source” 文件夹中新建一个CNAME文件（没有后缀），文件内容为你要设置的域名。目的是将你的域名（如 uegeek.com ）指向 Github 服务器。</p>
-<p>Deploy 到 Github上去后大概需要几分钟生效。</p>
-<p>到 DNSPod 新建域名，并添加 CNAME 记录指向 kidult00.github.io 。</p>
-<p>当打开 uegeek.com 看到改头换面的博客后，内心默默地原谅自己拖延了两年 T.T</p>
-<h1 id="八-常用命令"><a href="#八-常用命令" class="headerlink" title="八. 常用命令"></a>八. 常用命令</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>执行</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hexo new [layout] <title></title></td>
-<td>新建</td>
-</tr>
-<tr>
-<td>hexo publish [layout] <filename></filename></td>
-<td>发布草稿</td>
-</tr>
-<tr>
-<td>hexo g</td>
-<td>生成静态文件</td>
-</tr>
-<tr>
-<td>hexo d</td>
-<td>上传更新</td>
-</tr>
-<tr>
-<td>hexo publish [layout] <filename></filename></td>
-<td>清除缓存文件(db.json) 和 已生成的文件 (public).</td>
-</tr>
-<tr>
-<td>hexo s</td>
-<td>启动本地服务器</td>
-</tr>
-</tbody>
-</table>
-
-          
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/30/hexo-install/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -526,6 +460,134 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/29/npm-summary/" itemprop="url">
+                  npm小结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-29T02:11:32+08:00" content="2016-05-29">
+              2016-05-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。</p>
+<h1 id="NPM是什么"><a href="#NPM是什么" class="headerlink" title="NPM是什么"></a>NPM是什么</h1><p>NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看、搜索、发布等。<br>npm的背后，是基于couchdb的一个数据库，详细记录了每个包的信息，包括作者、版本、依赖、授权信息等。它的一个很重要的作用就是：将开发者从繁琐的包管理工作（版本、依赖等）中解放出来，更加专注于功能的开发。</p>
+<p>npm官网：<a href="https://npmjs.org/">https://npmjs.org/</a></p>
+<p>npm官方文档：<a href="https://npmjs.org/doc/README.html">https://npmjs.org/doc/README.html</a></p>
+<h1 id="我们需要了解什么"><a href="#我们需要了解什么" class="headerlink" title="我们需要了解什么"></a>我们需要了解什么</h1><ol>
+<li>npm的安装、卸载、升级、配置</li>
+<li>npm的使用：package的安装、卸载、升级、查看、搜索、发布</li>
+<li>npm包的安装模式：本地 vs 全局</li>
+<li>package.json：包描述信息</li>
+<li>package版本：常见版本声明形式</li>
+</ol>
+<h1 id="npm的安装-Mac"><a href="#npm的安装-Mac" class="headerlink" title="npm的安装 Mac"></a>npm的安装 Mac</h1><p>该命令执行后，自动装好node和npm。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h2 id="npm包安装模式"><a href="#npm包安装模式" class="headerlink" title="npm包安装模式"></a>npm包安装模式</h2><p>在具体介绍npm包的管理之前，我们首先得来了解一下npm包的两种安装模式。</p>
+<h2 id="本地安装-vs-全局安装（重要）"><a href="#本地安装-vs-全局安装（重要）" class="headerlink" title="本地安装 vs 全局安装（重要）"></a>本地安装 vs 全局安装（重要）</h2><p>node包的安装分两种：本地安装、全局安装。两者的区别如下，后面会通过简单例子说明<br>本地安装：package会被下载到当前所在目录，也只能在当前目录下使用。<br>全局安装：package会被下载到到特定的系统目录下，安装的package能够在所有目录下使用。</p>
+<h2 id="npm-install-pkg-–-本地安装"><a href="#npm-install-pkg-–-本地安装" class="headerlink" title="npm install pkg – 本地安装"></a>npm install pkg – 本地安装</h2><p>运行如下命令，就会在当前目录下安装grunt-cli（grunt命令行工具）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install grunt-cli</span><br></pre></td></tr></table></figure>
+<p>安装结束后，当前目录下回多出一个node_modules目录，grunt-cli就安装在里面。同时注意控制台输出的信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grunt-cli@0.1.9 node_modules/grunt-cli</span><br><span class="line">├── resolve@0.3.1</span><br><span class="line">├── nopt@1.0.10 (abbrev@1.0.4)</span><br><span class="line">└── findup-sync@0.1.2 (lodash@1.0.1, glob@3.1.21)</span><br></pre></td></tr></table></figure>
+<p>简单说明一下：</p>
+<ol>
+<li>grunt-cli@0.1.9：当前安装的package为grunt-cli，版本为0.19</li>
+<li>node_modules/grunt-cli：安装目录</li>
+<li>resolve@0.3.1：依赖的包有resolve、nopt、findup-sync，它们各自的版本、依赖在后面的括号里列出来</li>
+</ol>
+<h2 id="npm-install-g-pkg-全局安装"><a href="#npm-install-g-pkg-全局安装" class="headerlink" title="npm install -g pkg- 全局安装"></a>npm install -g pkg- 全局安装</h2><p>上面已经安装了grunt-cli，然后你跑到其他目录下面运行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt</span><br></pre></td></tr></table></figure>
+<p>果断提示你grunt命令不存在，为什么呢？因为上面只是进行了本地安装，grunt命令只能在对应安装目录下使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-bash: grunt: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
+<p>如果为了使用grunt命令，每到一个目录下都得重新安装一次，那不抓狂才怪。肿么办呢？<br>很简单，采用全局安装就行了，很简单，加上参数-g就可以了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+<p>于是，在所有目录下都可以无压力使用grunt命令了。这个时候，你会注意到控制台输入的信息有点不同。主要的区别在于安装目录，现在变成了/usr/local/lib/node_modules/grunt-cli，/usr/local/lib/node_modules/也就是之前所说的全局安装目录啦。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grunt-cli@0.1.9 /usr/<span class="built_in">local</span>/lib/node_modules/grunt-cli</span><br><span class="line">├── resolve@0.3.1</span><br><span class="line">├── nopt@1.0.10 (abbrev@1.0.4)</span><br><span class="line">└── findup-sync@0.1.2 (lodash@1.0.1, glob@3.1.21)</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/29/npm-summary/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -567,7 +629,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
