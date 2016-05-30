@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="狂人居">
-<meta property="og:url" content="http://xuzhibin.com/index.html">
+<meta name="description" content="配置12$ git config --global user.name &quot;John Doe&quot;$ git config --global user.email johndoe@example.com
+创建版本库123456$ git clone [url] #克隆远程版本库$ git clone git://github.com/schacon/grit.git$ git clone git://g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 常用命令速查表">
+<meta property="og:url" content="http://xuzhibin.com/2013/11/07/git-command/index.html">
 <meta property="og:site_name" content="狂人居">
-<meta property="og:description">
+<meta property="og:description" content="配置12$ git config --global user.name &quot;John Doe&quot;$ git config --global user.email johndoe@example.com
+创建版本库123456$ git clone [url] #克隆远程版本库$ git clone git://github.com/schacon/grit.git$ git clone git://g">
+<meta property="og:updated_time" content="2016-05-30T00:34:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="狂人居">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Git 常用命令速查表">
+<meta name="twitter:description" content="配置12$ git config --global user.name &quot;John Doe&quot;$ git config --global user.email johndoe@example.com
+创建版本库123456$ git clone [url] #克隆远程版本库$ git clone git://github.com/schacon/grit.git$ git clone git://g">
 
 
 
@@ -110,7 +114,7 @@
   };
 </script>
 
-  <title> 狂人居 </title>
+  <title> Git 常用命令速查表 | 狂人居 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,9 +135,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,9 +265,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -285,303 +287,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/30/hexo-install/" itemprop="url">
-                  Hexo安装记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T00:45:33+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/30/hexo-install/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/hexo-install/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Hexo是啥"><a href="#Hexo是啥" class="headerlink" title="Hexo是啥"></a>Hexo是啥</h1><p><a href="https://hexo.io">Hexo</a> 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。</p>
-<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>首先翻看一遍 <a href="https://hexo.io/zh-cn/">Hexo 官方文档</a></p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>安装 Node.js &amp; Git<br>该命令执行后，自动装好node和npm。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<h2 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h2><p>按照Github提示，创建SSH秘钥：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/.ssh <span class="comment">#创建ssh命令</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">![](![http://](http://))</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span> <span class="comment">#注意更改Email地址</span></span><br><span class="line"></span><br><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<p>此时，pdcopy命令已经将id_rsa.pub内容复制到剪切板。</p>
-<p>登录 github：<a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a> 点击Add an SSH Key，Title 部分填写一个所用电脑的名称，然后在Key部分填写之前通过pdcopy命令复制的内容。生成 key <a href="https://help.github.com/articles/generating-ssh-keys/">https://help.github.com/articles/generating-ssh-keys/</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"yourusername</span><br><span class="line">$ git config --global user.email "</span>youremail<span class="string">"</span></span><br></pre></td></tr></table></figure>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>如果是下面的反馈：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
-<p>不要紧张，输入yes就好，然后会看到：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi cnfeat! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>好了，这个时候如果报错，记得加 sudo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/30/hexo-install/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/29/npm-summary/" itemprop="url">
-                  npm小结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-29T02:11:32+08:00" content="2016-05-29">
-              2016-05-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/29/npm-summary/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/29/npm-summary/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>随着一系列基于nodes的应用/工具的出现，无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。</p>
-<h1 id="NPM是什么"><a href="#NPM是什么" class="headerlink" title="NPM是什么"></a>NPM是什么</h1><p>NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看、搜索、发布等。<br>npm的背后，是基于couchdb的一个数据库，详细记录了每个包的信息，包括作者、版本、依赖、授权信息等。它的一个很重要的作用就是：将开发者从繁琐的包管理工作（版本、依赖等）中解放出来，更加专注于功能的开发。</p>
-<p>npm官网：<a href="https://npmjs.org/">https://npmjs.org/</a></p>
-<p>npm官方文档：<a href="https://npmjs.org/doc/README.html">https://npmjs.org/doc/README.html</a></p>
-<h1 id="我们需要了解什么"><a href="#我们需要了解什么" class="headerlink" title="我们需要了解什么"></a>我们需要了解什么</h1><ol>
-<li>npm的安装、卸载、升级、配置</li>
-<li>npm的使用：package的安装、卸载、升级、查看、搜索、发布</li>
-<li>npm包的安装模式：本地 vs 全局</li>
-<li>package.json：包描述信息</li>
-<li>package版本：常见版本声明形式</li>
-</ol>
-<h1 id="npm的安装-Mac"><a href="#npm的安装-Mac" class="headerlink" title="npm的安装 Mac"></a>npm的安装 Mac</h1><p>该命令执行后，自动装好node和npm。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<h2 id="npm包安装模式"><a href="#npm包安装模式" class="headerlink" title="npm包安装模式"></a>npm包安装模式</h2><p>在具体介绍npm包的管理之前，我们首先得来了解一下npm包的两种安装模式。</p>
-<h2 id="本地安装-vs-全局安装（重要）"><a href="#本地安装-vs-全局安装（重要）" class="headerlink" title="本地安装 vs 全局安装（重要）"></a>本地安装 vs 全局安装（重要）</h2><p>node包的安装分两种：本地安装、全局安装。两者的区别如下，后面会通过简单例子说明<br>本地安装：package会被下载到当前所在目录，也只能在当前目录下使用。<br>全局安装：package会被下载到到特定的系统目录下，安装的package能够在所有目录下使用。</p>
-<h2 id="npm-install-pkg-–-本地安装"><a href="#npm-install-pkg-–-本地安装" class="headerlink" title="npm install pkg – 本地安装"></a>npm install pkg – 本地安装</h2><p>运行如下命令，就会在当前目录下安装grunt-cli（grunt命令行工具）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install grunt-cli</span><br></pre></td></tr></table></figure>
-<p>安装结束后，当前目录下回多出一个node_modules目录，grunt-cli就安装在里面。同时注意控制台输出的信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grunt-cli@0.1.9 node_modules/grunt-cli</span><br><span class="line">├── resolve@0.3.1</span><br><span class="line">├── nopt@1.0.10 (abbrev@1.0.4)</span><br><span class="line">└── findup-sync@0.1.2 (lodash@1.0.1, glob@3.1.21)</span><br></pre></td></tr></table></figure>
-<p>简单说明一下：</p>
-<ol>
-<li>grunt-cli@0.1.9：当前安装的package为grunt-cli，版本为0.19</li>
-<li>node_modules/grunt-cli：安装目录</li>
-<li>resolve@0.3.1：依赖的包有resolve、nopt、findup-sync，它们各自的版本、依赖在后面的括号里列出来</li>
-</ol>
-<h2 id="npm-install-g-pkg-全局安装"><a href="#npm-install-g-pkg-全局安装" class="headerlink" title="npm install -g pkg- 全局安装"></a>npm install -g pkg- 全局安装</h2><p>上面已经安装了grunt-cli，然后你跑到其他目录下面运行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt</span><br></pre></td></tr></table></figure>
-<p>果断提示你grunt命令不存在，为什么呢？因为上面只是进行了本地安装，grunt命令只能在对应安装目录下使用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-bash: grunt: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
-<p>如果为了使用grunt命令，每到一个目录下都得重新安装一次，那不抓狂才怪。肿么办呢？<br>很简单，采用全局安装就行了，很简单，加上参数-g就可以了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
-<p>于是，在所有目录下都可以无压力使用grunt命令了。这个时候，你会注意到控制台输入的信息有点不同。主要的区别在于安装目录，现在变成了/usr/local/lib/node_modules/grunt-cli，/usr/local/lib/node_modules/也就是之前所说的全局安装目录啦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grunt-cli@0.1.9 /usr/<span class="built_in">local</span>/lib/node_modules/grunt-cli</span><br><span class="line">├── resolve@0.3.1</span><br><span class="line">├── nopt@1.0.10 (abbrev@1.0.4)</span><br><span class="line">└── findup-sync@0.1.2 (lodash@1.0.1, glob@3.1.21)</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/29/npm-summary/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2013/11/07/git-command/" itemprop="url">
-                  Git 常用命令速查表
-                </a>
+                Git 常用命令速查表
               
             
           </h1>
@@ -647,9 +353,7 @@
       
 
       
-        
-          
-            <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"John Doe"</span></span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+        <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"John Doe"</span></span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
 <h1 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> [url] <span class="comment">#克隆远程版本库</span></span><br><span class="line">$ git <span class="built_in">clone</span> git://github.com/schacon/grit.git</span><br><span class="line">$ git <span class="built_in">clone</span> git://github.com/schacon/grit.git mygrit</span><br><span class="line">$ git <span class="built_in">clone</span> --bare my_project my_project.git <span class="comment">#创建纯仓库</span></span><br><span class="line">$ git init <span class="comment">#初始化本地版本库</span></span><br><span class="line">$ git init --bare <span class="comment">#创建纯仓库</span></span><br></pre></td></tr></table></figure>
 <h1 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git status <span class="comment">#查看状态</span></span><br><span class="line">$ git diff <span class="comment">#查看变更内容</span></span><br><span class="line">$ git diff --cached <span class="comment">#查看已经暂存起来的文件和上次提交时的快照之间的差异</span></span><br><span class="line">$ git diff master...contrib <span class="comment">#特性分支contrib和它同master分支的共同祖先之间的差异（合并时实际将要引入的新代码）</span></span><br><span class="line">$ git add . <span class="comment">#跟踪所有改动过的文件</span></span><br><span class="line">$ git add [file] <span class="comment">#跟踪指定的文件</span></span><br><span class="line">$ git mv [old] [new] <span class="comment">#文件改名</span></span><br><span class="line">$ git rm [file] <span class="comment">#删除文件</span></span><br><span class="line">$ git rm --cached [file] <span class="comment">#停止跟踪文件但不删除</span></span><br><span class="line">$ git commit -m <span class="string">"commit message"</span> <span class="comment">#提交所有更新过的文件</span></span><br><span class="line">$ git commit --amend <span class="comment">#修改最后一次提交</span></span><br><span class="line">$ git commit <span class="_">-a</span> -m <span class="string">'added new benchmarks'</span> <span class="comment">#跳过暂存区域直接提交</span></span><br></pre></td></tr></table></figure>
 <h1 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment">#查看提交历史</span></span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> -p [file] <span class="comment">#查看指定文件的提交历史</span></span><br><span class="line">$ git <span class="built_in">log</span> master..experiemnt <span class="comment">#所有可从experiment分支中获得而不能从master分支中获得的提交</span></span><br><span class="line">$ git blame [file] <span class="comment">#以列表方式查看指定文件的提交历史</span></span><br><span class="line">$ git <span class="built_in">log</span> origin/featureA ^featureA <span class="comment">#比较origin/featureA及featureA分支，查看origin/featureA更新了哪些内容</span></span><br></pre></td></tr></table></figure>
@@ -663,36 +367,58 @@
 <p>.gitignore #忽略某些文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此为注释– 将被Git忽略</span></span><br><span class="line">*.[oa] <span class="comment"># 忽略所有.o或.a结尾的文件</span></span><br><span class="line">!lib.a <span class="comment"># 但lib.a 除外</span></span><br><span class="line">/TODO <span class="comment"># 仅仅忽略项目根目录下的TODO文件，不包括subdir/TODO</span></span><br><span class="line">build/ <span class="comment"># 忽略build/目录下的所有文件</span></span><br><span class="line">doc/*.txt <span class="comment"># 会忽略doc/notes.txt但不包括doc/server/arch.txt</span></span><br></pre></td></tr></table></figure>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/29/npm-summary/" rel="prev" title="npm小结">
+                npm小结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -700,6 +426,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/11/07/git-command/"
+           data-title="Git 常用命令速查表" data-url="http://xuzhibin.com/2013/11/07/git-command/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -719,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -770,6 +513,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改和提交"><span class="nav-number">3.</span> <span class="nav-text">修改和提交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看提交历史"><span class="nav-number">4.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#撤消"><span class="nav-number">5.</span> <span class="nav-text">撤消</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支与标签"><span class="nav-number">6.</span> <span class="nav-text">分支与标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并与衍合"><span class="nav-number">7.</span> <span class="nav-text">合并与衍合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程操作"><span class="nav-number">8.</span> <span class="nav-text">远程操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git文件"><span class="nav-number">10.</span> <span class="nav-text">Git文件</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -873,6 +627,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
