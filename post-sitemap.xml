@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://xuzhibin.com/2016/06/01/hexo-coding/</loc>
+        <lastmod>2016-06-01T03:34:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://xuzhibin.com/2010/06/13/lucenenet-getstart/</loc>
         <lastmod>2016-05-30T13:47:09.000Z</lastmod>
         <changefreq>weekly</changefreq>

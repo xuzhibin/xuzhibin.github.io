@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://xuzhibin.com/categories/tools/</loc>
-        <lastmod>2016-05-30T04:40:34.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://xuzhibin.com/categories/go/</loc>
         <lastmod>2016-05-30T09:38:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +51,13 @@
     <url>
         <loc>http://xuzhibin.com/categories/net/</loc>
         <lastmod>2016-05-30T13:47:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://xuzhibin.com/categories/tools/</loc>
+        <lastmod>2016-06-01T03:34:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
